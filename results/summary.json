@@ -1,0 +1,308 @@
+{
+  "bootstrap": {
+    "unit": "case",
+    "replicates": 10000,
+    "seed": 20261027,
+    "estimand": "vote-weighted preference conditional on cross-family, order-consistent votes"
+  },
+  "baseline": {
+    "wins": 1174,
+    "votes": 1723,
+    "cases": 45,
+    "p": 0.681369704004643,
+    "ci_low": 0.6253794778384942,
+    "ci_high": 0.7327635327635328,
+    "case_balanced_p": 0.6630651425299027,
+    "diagnostics": {
+      "rows": 6768,
+      "valid_rows": 6660,
+      "cross_family_rows": 5354,
+      "candidate_vote_groups": 2701,
+      "retained_votes": 1723,
+      "retention": 0.6379118844872269
+    },
+    "by_generator": {
+      "anthropic/claude-sonnet-4.5": {
+        "wins": 226,
+        "votes": 281,
+        "cases": 42,
+        "p": 0.8042704626334519,
+        "ci_low": 0.6911764705882353,
+        "ci_high": 0.901060070671378,
+        "case_balanced_p": 0.8117183742183742
+      },
+      "cncl-penn-state/crpo-llama-3.1-8b-instruct-nov": {
+        "wins": 312,
+        "votes": 477,
+        "cases": 45,
+        "p": 0.6540880503144654,
+        "ci_low": 0.5612903225806452,
+        "ci_high": 0.741869918699187,
+        "case_balanced_p": 0.6284415584415585
+      },
+      "deepseek/deepseek-v3.1": {
+        "wins": 244,
+        "votes": 362,
+        "cases": 45,
+        "p": 0.6740331491712708,
+        "ci_low": 0.5555555555555556,
+        "ci_high": 0.7796610169491526,
+        "case_balanced_p": 0.6198404681738015
+      },
+      "google/gemini-2.5-flash": {
+        "wins": 195,
+        "votes": 247,
+        "cases": 41,
+        "p": 0.7894736842105263,
+        "ci_low": 0.68,
+        "ci_high": 0.8888888888888888,
+        "case_balanced_p": 0.7936437546193643
+      },
+      "openai/gpt-4o": {
+        "wins": 197,
+        "votes": 356,
+        "cases": 45,
+        "p": 0.5533707865168539,
+        "ci_low": 0.440625,
+        "ci_high": 0.6572237960339944,
+        "case_balanced_p": 0.5121701138367805
+      }
+    }
+  },
+  "contrasts": [
+    {
+      "judge": "Gemini",
+      "treatment": "P_L_TRIZ_ON",
+      "baseline": "P_L_TRIZ_OFF",
+      "name": "TRIZ content / long prompts",
+      "wins": 39,
+      "votes": 75,
+      "cases": 39,
+      "p": 0.52,
+      "ci_low": 0.39436619718309857,
+      "ci_high": 0.6428571428571429,
+      "case_balanced_p": 0.5384615384615384,
+      "unfiltered_order_p": 0.5125
+    },
+    {
+      "judge": "Gemini",
+      "treatment": "P_S_TRIZ_ON",
+      "baseline": "P_S_TRIZ_OFF",
+      "name": "TRIZ mention / short prompts",
+      "wins": 46,
+      "votes": 80,
+      "cases": 39,
+      "p": 0.575,
+      "ci_low": 0.4507042253521127,
+      "ci_high": 0.6941176470588235,
+      "case_balanced_p": 0.5299145299145299,
+      "unfiltered_order_p": 0.55
+    },
+    {
+      "judge": "Gemini",
+      "treatment": "P_L_TRIZ_OFF",
+      "baseline": "P_S_TRIZ_OFF",
+      "name": "Generic structure / no TRIZ",
+      "wins": 42,
+      "votes": 86,
+      "cases": 40,
+      "p": 0.4883720930232558,
+      "ci_low": 0.3870967741935484,
+      "ci_high": 0.5853658536585366,
+      "case_balanced_p": 0.4708333333333333,
+      "unfiltered_order_p": 0.49166666666666664
+    },
+    {
+      "judge": "Gemini",
+      "treatment": "P_L_TRIZ_ON",
+      "baseline": "P_S_TRIZ_ON",
+      "name": "Long vs short / TRIZ on",
+      "wins": 44,
+      "votes": 89,
+      "cases": 39,
+      "p": 0.4943820224719101,
+      "ci_low": 0.3953488372093023,
+      "ci_high": 0.5869565217391305,
+      "case_balanced_p": 0.4700854700854701,
+      "unfiltered_order_p": 0.49583333333333335
+    },
+    {
+      "judge": "Jev",
+      "treatment": "P_L_TRIZ_ON",
+      "baseline": "P_L_TRIZ_OFF",
+      "name": "TRIZ content / long prompts",
+      "wins": 47,
+      "votes": 78,
+      "cases": 33,
+      "p": 0.6025641025641025,
+      "ci_low": 0.5,
+      "ci_high": 0.7066666666666667,
+      "case_balanced_p": 0.6212121212121212,
+      "unfiltered_order_p": 0.55
+    },
+    {
+      "judge": "Jev",
+      "treatment": "P_S_TRIZ_ON",
+      "baseline": "P_S_TRIZ_OFF",
+      "name": "TRIZ mention / short prompts",
+      "wins": 44,
+      "votes": 88,
+      "cases": 37,
+      "p": 0.5,
+      "ci_low": 0.3953488372093023,
+      "ci_high": 0.6022727272727273,
+      "case_balanced_p": 0.49324324324324326,
+      "unfiltered_order_p": 0.5
+    }
+  ],
+  "factorial_diagnostics": {
+    "Gemini": {
+      "rows": 1280,
+      "valid_rows": 1280,
+      "cross_family_rows": 960,
+      "candidate_vote_groups": 480,
+      "retained_votes": 330,
+      "retention": 0.6875
+    },
+    "Jev": {
+      "rows": 640,
+      "valid_rows": 640,
+      "cross_family_rows": 640,
+      "candidate_vote_groups": 320,
+      "retained_votes": 166,
+      "retention": 0.51875
+    }
+  },
+  "selection": [
+    {
+      "judge": "anthropic/claude-sonnet-5",
+      "condition": "rank",
+      "attempted_calls": 30,
+      "usable_calls": 30,
+      "slates": 15,
+      "matches": 2,
+      "shuffled_agreement": 0.13333333333333333,
+      "same_order_trials": 15,
+      "same_order_matches": 4,
+      "same_order_agreement": 0.26666666666666666,
+      "last_position_rate": 0.03333333333333333
+    },
+    {
+      "judge": "anthropic/claude-sonnet-5",
+      "condition": "score_batch",
+      "attempted_calls": 30,
+      "usable_calls": 30,
+      "slates": 15,
+      "matches": 6,
+      "shuffled_agreement": 0.4,
+      "same_order_trials": 15,
+      "same_order_matches": 9,
+      "same_order_agreement": 0.6,
+      "last_position_rate": 0.0
+    },
+    {
+      "judge": "deepseek/deepseek-chat-v3.1",
+      "condition": "rank",
+      "attempted_calls": 30,
+      "usable_calls": 30,
+      "slates": 15,
+      "matches": 0,
+      "shuffled_agreement": 0.0,
+      "same_order_trials": 15,
+      "same_order_matches": 7,
+      "same_order_agreement": 0.4666666666666667,
+      "last_position_rate": 0.4
+    },
+    {
+      "judge": "deepseek/deepseek-chat-v3.1",
+      "condition": "score_batch",
+      "attempted_calls": 30,
+      "usable_calls": 30,
+      "slates": 15,
+      "matches": 6,
+      "shuffled_agreement": 0.4,
+      "same_order_trials": 15,
+      "same_order_matches": 8,
+      "same_order_agreement": 0.5333333333333333,
+      "last_position_rate": 0.03333333333333333
+    },
+    {
+      "judge": "google/gemini-2.5-flash",
+      "condition": "rank",
+      "attempted_calls": 30,
+      "usable_calls": 30,
+      "slates": 15,
+      "matches": 1,
+      "shuffled_agreement": 0.06666666666666667,
+      "same_order_trials": 15,
+      "same_order_matches": 13,
+      "same_order_agreement": 0.8666666666666667,
+      "last_position_rate": 0.2
+    },
+    {
+      "judge": "google/gemini-2.5-flash",
+      "condition": "score_batch",
+      "attempted_calls": 30,
+      "usable_calls": 30,
+      "slates": 15,
+      "matches": 4,
+      "shuffled_agreement": 0.26666666666666666,
+      "same_order_trials": 15,
+      "same_order_matches": 13,
+      "same_order_agreement": 0.8666666666666667,
+      "last_position_rate": 0.0
+    },
+    {
+      "judge": "openai/gpt-4o",
+      "condition": "rank",
+      "attempted_calls": 30,
+      "usable_calls": 8,
+      "slates": 2,
+      "matches": 0,
+      "shuffled_agreement": 0.0,
+      "same_order_trials": 0,
+      "same_order_matches": 0,
+      "same_order_agreement": null,
+      "last_position_rate": 0.5
+    },
+    {
+      "judge": "openai/gpt-4o",
+      "condition": "score_batch",
+      "attempted_calls": 30,
+      "usable_calls": 10,
+      "slates": 2,
+      "matches": 0,
+      "shuffled_agreement": 0.0,
+      "same_order_trials": 0,
+      "same_order_matches": 0,
+      "same_order_agreement": null,
+      "last_position_rate": 0.0
+    }
+  ],
+  "cost": [
+    {
+      "mode": "P_L_TRIZ_OFF",
+      "calls": 160,
+      "cases": 40,
+      "mean_tokens": 1271.99375
+    },
+    {
+      "mode": "P_L_TRIZ_ON",
+      "calls": 160,
+      "cases": 40,
+      "mean_tokens": 1357.475
+    },
+    {
+      "mode": "P_S_TRIZ_OFF",
+      "calls": 160,
+      "cases": 40,
+      "mean_tokens": 607.35
+    },
+    {
+      "mode": "P_S_TRIZ_ON",
+      "calls": 160,
+      "cases": 40,
+      "mean_tokens": 653.7125
+    }
+  ]
+}
